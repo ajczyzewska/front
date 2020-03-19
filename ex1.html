@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            --divNumber: 8;
+            --divHeight: calc(100vh/var(--divNumber));
+            --oddBgc: rgb(20, 20, 180);
+            --evenBgc: rgb(180, 60, 20);
+            --fontSizeDiv: 20px;
+            /* --width1: 10px;
+            --width2: 200px; */
+        }
+
+        div {
+            height: var(--divHeight);
+            /* height: calc(var(--width1) + var(--width2)); */
+            background-color: var(--oddBgc)
+        }
+
+        div:nth-child(even) {
+            background-color: var(--evenBgc);
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+
+</html>
