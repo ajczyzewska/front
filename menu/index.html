@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Menu</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 300vh;
+        }
+
+        .wrap {
+            max-width: 1280px;
+            margin: 0 auto;
+            /* overflow: hidden; */
+        }
+
+        .wrap,
+        nav.desktop,
+        header {
+            height: 360px;
+        }
+
+        nav.desktop {
+            float: left;
+            width: 300px;
+
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav.desktop a {
+            /* background-color: blueviolet; */
+            display: block;
+            line-height: 72px;
+            font-size: 22px;
+            color: black;
+            text-decoration: none;
+            font-family: arial;
+            padding: 0 5px 0 30px;
+        }
+
+        nav.desktop i {
+            width: 50px;
+            border-right: solid black 2px;
+            margin-right: 30px;
+            transition: .3s;
+        }
+
+        nav.desktop a:hover i {
+            margin-right: 50px;
+        }
+
+        nav.desktop a:hover {
+            color: white;
+            background-color: royalblue
+        }
+
+        header {
+            float: left;
+            width: calc(100% - 300px);
+            background-image: url(pianino.jpg);
+            background-size: cover;
+            background-position: center;
+
+        }
+
+        section {
+            margin-top: 50px;
+        }
+
+        section h1 {
+            font-size: 40px;
+            font-family: arial;
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        nav.mobile {
+            display: none;
+        }
+
+
+
+        @media (max-width: 1024px) {
+            nav.desktop {
+                display: none;
+            }
+
+            nav.mobile {
+                position: fixed;
+                display: block;
+                width: 72px;
+                height: 100%;
+                background-color: black;
+                color: white;
+            }
+
+            nav.mobile a {
+                display: block;
+                line-height: 10vh;
+                color: white;
+                font-size: 30px;
+                text-align: center;
+            }
+
+
+
+            nav.mobile li:nth-child(1) a {
+                color: royalblue;
+            }
+            nav.mobile li a:hover {
+                color: orange;
+            }
+            header {
+                width: 100%;
+            }
+
+            section h1 {
+                font-size: 20px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <nav class="desktop">
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="far fa-play-circle"></i>Start</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-shopping-cart"></i>Oferta</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-rss"></i>Blog</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="far fa-calendar-alt"></i>Terminarz</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="far fa-envelope"></i>Kontakt</a>
+                </li>
+            </ul>
+        </nav>
+        <nav class="mobile">
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="far fa-play-circle"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-rss"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="far fa-calendar-alt"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <header></header>
+    </div>
+    <section>
+        <h1>Witaj w naszym świecie</h1>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!-- 
+Zrób szachownicę wykorzystująć float dla każdego pola
+Nie możesz określić wysokości div z klasą board (określi tylko szerokosć na 30vw)
+
+Wycentruj szachownicę tylko w poziomie. Szachownica ma być position static.
+Szachownica ma mieć 30% szerokości okna przeglądarki i dodatkowo border: 10px czarny.
+
+Tekst ma być pod szachownicą. Właściwość position h1 musi być static.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <style> 
+        .clearfix::after{
+            content: "";
+            display: block; 
+            clear: both; 
+
+        }
+        .board{
+            box-sizing: content-box;
+            border: solid black 10px; 
+            position: static;
+            width: 30vw;
+            margin-left: calc(50% - 15vw);
+            /*background-color: white; */
+            /*overflow: hidden; - zeby board wiedzial, ze sa spany*/
+
+            font-size:0;
+            
+        }
+        span{
+            width: 50%;
+            height: 15vw;
+            float: left;
+            m
+           
+                   }
+        span:nth-child(1){
+            background-color: red;
+            border: 0;
+        }
+
+        span:nth-child(2){
+            background-color: white;
+                        
+        }
+        span:nth-child(3){
+            background-color: white;
+                              }
+        span:nth-child(4){
+            background-color: red;
+           
+        }
+        h1{
+            text-align: center;
+            width: 100vw;
+            position: static;
+            clear: both;
+            line-height: normal;
+            
+            
+        }
+
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Szachownica Float</title>
+    <style></style>
+</head>
+
+<body>
+    <div class="board clearfix">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <!-- Pseudoelement ::after -->
+    </div>
+    <h1>Szachownica "float"</h1>
+</body>
+
+</html>
