@@ -1,0 +1,44 @@
+<!-- 
+    1. za pomocą calc (bez transform);
+    2. za pomocą transform
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        header {
+            width: 80%;
+            height: 300px;
+            margin: 0 auto;
+            padding: 10px 20px 50px 20px;
+            border: 3px solid gray;
+            position: relative;
+        }
+
+        div {
+            padding: 20px;
+            width: 30%;
+            background-color: gray;
+            top: 50%;
+            left: 50%;
+           transform: translate(-50%, -50%);
+           overflow: hidden;
+            position: absolute;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic amet nam et, velit pariatur vel facilis explicabo, nihil
+            quae beatae aliquam. In, unde minima. Iure ea veniam nostrum ad quibusdam.</div>
+    </header>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Domek</title>
+    <style>
+        span{
+            color: white;
+            background-color: tomato;
+            padding: 10px;
+            position: absolute;
+            top: 20vh; 
+            left: 20vw; 
+            transition: 1s;
+        }
+
+        span:hover{
+            background-color: red;
+            transform: scale(2, 2 );
+        }
+        div{
+            transition: 2s;
+            position:absolute;
+            top:100vh;
+            left: 100vw;
+
+        }
+
+        span:hover~div:nth-of-type(1){
+            width: 20vw;
+            height: 20vw;
+            background-color: teal;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            transition-delay: 0.2s;
+        }
+
+        span:hover~div:nth-of-type(2){
+            width: 14vw;
+            height: 14vw;
+            background-color: black;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate( -50%, calc(-50% - 10vw)) rotate(45deg);
+            transition-delay: 0.4s;
+        }
+
+        span:hover~div:nth-of-type(3){
+            width: 5vw;
+            height: 10vw;
+            background-color: grey;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(calc(-50% - 4vw),  calc(-50% + 5vw));
+            z-index: 2;
+            transition-delay: 0.6s;
+        }
+
+        span:hover~div:nth-of-type(4){
+            width: 5vw;
+            height: 5vw;
+            background-color: blue;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(calc(-50% + 4vw),  calc(-50% - 3vw));
+            z-index: 2;
+            transition-delay: 0.8s;
+        }
+
+        span:hover~div:nth-of-type(5){
+            width: 5vw;
+            height: 5vw;
+            background-color: lightgray;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(calc(-50% + 6vw),  calc(-50% - 12vw));
+            z-index: -2;
+            transition-delay: 1s;
+        }
+
+
+
+    </style>
+
+</head>
+
+<body>
+    <span>BUDUJEMY</span>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+
+</html>
