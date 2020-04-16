@@ -1,0 +1,175 @@
+<!-- http://websamuraj.pl/examples/fez/pong.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <title>gra pong</title>
+
+ <style>
+  html {
+   /* stół */
+   --tableWidth: 700px;
+   --tableHeight: 400px;
+   --tableColor: #333;
+   /* rakietka */
+   --paddleWidth: 25px;
+   --paddleHeight: 80px;
+   --paddleColor: yellow;
+   /* piłka */
+   --ballSize: 20px;
+   --ballColor:red;
+   /* pozycja */
+   --paddleFromEdge: 50px;
+   /* czas animacji */
+   --animationTime: 5s;
+  }
+
+  .table,
+  .ball,
+  .paddle,
+  .result {
+   position: absolute;
+  }
+
+  .table {
+   width: var(--tableWidth);
+   height: var(--tableHeight);
+   background-color: var(--tableColor);
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+  overflow: hidden;
+  }
+
+  .ball {
+   width: var(--ballSize);
+   height: var(--ballSize);
+   top: calc(50% - var(--ballSize)/2);
+   left: calc(50% - var(--ballSize)/2);
+   background-color: var(--ballColor);
+   border-radius: 50%;
+
+   /* Stwórz animację ballMove */
+   animation: ballMove var(--animationTime) linear both;
+
+  }
+
+  .paddle {
+   width: var(--paddleWidth);
+   height: var(--paddleHeight);
+   background-color: var(--paddleColor);
+  }
+
+  /* rakietka lewa strona */
+
+  .player {
+   top: calc(50% - var(--paddleHeight)/2);
+
+   left: var(--paddleFromEdge);
+   /* utwórz animację ruchu dla paletki po lewej stronie */
+   animation: playerPaddle var(--animationTime) linear both;
+  }
+
+  /* prawa strona */
+
+  .ai {
+   top: calc(50% - var(--paddleHeight)/2);
+   right: var(--paddleFromEdge);
+   /* utwórz animację ruchu dla paletki po prawej stronie */
+   animation: aiPaddle var(--animationTime) linear both ;
+  }
+
+  .result {
+
+   width: 100%;
+   left: 0;
+   top: 10%;
+   text-transform: uppercase;
+   text-align: center;
+   font-family: sans-serif;
+
+   color: black;
+   transform: scale(0);
+   /* Utwórz animację, któa pokaże wynik po zakończeniu gry */
+   animation: showResult 1s calc(var(--animationTime) + 1s) both ;
+  }
+
+
+  @keyframes ballMove {
+
+   /*left: 75px - lewa */
+   /* left: 605px - prawa */
+   /* top: 0 - góra */
+   /* top: 380px - góra */
+   /* left: 340px - środek */
+   /* do pokonania 530px (między rakietkami) na 40% czyli 13px na 1% - prędkość piłki*/
+   0% {
+        top: calc(50% - var(--ballSize)/2);
+        left: calc(50% - var(--ballSize)/2);
+      } 
+   20% {
+    top: 340px;
+    /* left: calc(var(--tableWidth) - var(--paddleFromEdge) - var(--paddleWidth) - var(--ballSize)); */
+    left: 605px;
+   }
+   
+   40%{
+     top: calc(50% - var(--ballSize) + (var(--tableHeight)/2));
+     left: 300px;
+   }
+
+   60%{
+     top: 100px;
+     left: calc(var(--paddleFromEdge) + var(--paddleWidth)); 
+   }
+
+   70%{
+     top:0;
+     left: 300px;
+   }
+
+   100%{
+      top: 100px;
+      left: calc(var(--tableWidth) + var(--ballSize)); 
+   }
+
+  }
+
+  @keyframes playerPaddle {
+    60%{
+     top: 100px;
+      
+   }
+  }
+
+  @keyframes aiPaddle {
+    20%{
+      top:calc(340px - var(--paddleWidth)/2);
+      right: var(--paddleFromEdge);
+    }
+    80%{
+      top:0;
+      right: var(--paddleFromEdge);
+    }
+  }
+
+  @keyframes showResult {
+    100%{
+    transform: scale(1);
+    }
+  }
+ </style>
+</head>
+
+<body>
+ <div class="table">
+  <div class="ball"></div>
+  <div class="paddle player"></div>
+  <div class="paddle ai"></div>
+ </div>
+ <h1 class="result">wygrałeś!</h1>
+</body>
+
+</html>
