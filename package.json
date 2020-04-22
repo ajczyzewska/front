@@ -1,0 +1,22 @@
+{
+  "name": "front",
+  "version": "1.0.0",
+  "description": "Frontend Course",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajczyzewska/frontend.git"
+  },
+  "author": "Agnieszka Czyzewska",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajczyzewska/frontend/issues"
+  },
+  "homepage": "https://github.com/ajczyzewska/frontend#readme",
+  "dependencies": {
+    "eslint": "^6.8.0"
+  }
+}
